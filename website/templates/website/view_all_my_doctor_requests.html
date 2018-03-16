@@ -1,0 +1,12 @@
+<h1>{{ doctor }}</h1>
+{% if requests_list %}
+    <ul>
+    {% for doc in requests_list %}
+        <li>{{ doc.patient.name}}, {{ doc.resourceId}},{{ doc.resourceType}}</li> 
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Requests are available.</p>
+{% endif %}
+
+

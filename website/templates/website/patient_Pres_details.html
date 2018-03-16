@@ -1,0 +1,6 @@
+<h1>{{ patient }}</h1>
+<ul>
+	{% for p in prescript %}
+    <li>{{ p.medicine.name}}</li> <button onclick="alert('login= {{ lg }} requested for {{p.medicine.name}}')">Request</button>
+    {% endfor %}
+</ul>

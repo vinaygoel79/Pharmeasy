@@ -1,0 +1,9 @@
+{% if doctor_list %}
+    <ul>
+    {% for doctor in doctor_list %}
+        <li><a href="{% url 'doctor_details' doctor.pk %}">{{ doctor.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Doctors are available.</p>
+{% endif %}

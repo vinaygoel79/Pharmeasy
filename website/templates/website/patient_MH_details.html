@@ -1,0 +1,6 @@
+<h1>{{ patient }}</h1>
+<ul>
+	{% for h in history %}
+    <li>{{ h.disease}},{{h.startDate}}</li> <button onclick="alert('login= {{ lg }} requested {{ h.disease }}')">Request</button>
+    {% endfor %}
+</ul>

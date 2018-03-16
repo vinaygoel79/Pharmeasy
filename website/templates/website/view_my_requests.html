@@ -1,0 +1,18 @@
+<h1>{{ patient }}</h1>
+{% if requests_list %}
+    <ul>
+    {% for per in requests_list %}
+        <li>{{ per.doctor.name}}, {{ per.resourceId}},{{ per.resourceType}}</li> 
+        <form action="RequestMethod" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="permission_id" value="{{ per.pk }}">
+        <input type="submit" id="approve" value="Approved" name="Approve"/>
+        <input type="submit" id="decline" value="Declined" name="Decline"/>
+        </form>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Requests are available.</p>
+{% endif %}
+
+
